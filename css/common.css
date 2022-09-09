@@ -23,9 +23,6 @@ button {
   cursor: pointer;
 }
 
-ul {
-  list-style: none;
-}
 img {
   display: block;
   max-width: 100%;
@@ -33,6 +30,7 @@ img {
   height: auto;
 }
 .gallery {
+  list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
