@@ -13,41 +13,11 @@ const images = [
   },
 ];
 
-// const galleryItemTemplate = (url, alt) => {
-//   return `
-//     <li class="gallery__item">
-//       <img class="gallery__img" src="${url}" alt="${alt}" width="350">
-//     </li>
-//   `;
-// };
-
-// const imagesMarkup = images.map(({ url, alt }) => galleryItemTemplate(url, alt)).join('');
-
-// const galleryRef = document.querySelector('ul.gallery');
-
-// galleryRef.insertAdjacentHTML('beforeend', imagesMarkup);
-
-// ------------
-
-// const galleryRef = document.querySelector('.gallery');
-
-// const makeImageItem = ({ url, alt }) => {
-//   return `<li class = "gallery__item"><img src="${url}" alt="${alt}" class = "gallery__img"></li>`;
-// };
-
-// const galleryMarkup = images.map(makeImageItem);
-
-// galleryRef.insertAdjacentHTML('afterbegin', galleryMarkup);
-
-// -----------
-
 const galleryEl = document.querySelector('.gallery');
 
-const createGallery = images.map(({ url, alt }) => {
-  const liEl = document.createElement('li');
-  liEl.insertAdjacentHTML('afterbegin', `<img src='${url}' alt='${alt}' width="350">`);
-
-  return liEl;
+const listItem = images.map(({ url, alt }) => {
+  return `<li class = "list__item"><img class = "list__img" src="${url}" alt="${alt}" width = 400></li>`;
 });
 
-galleryEl.append(...createGallery);
+const markup = listItem.join('');
+galleryEl.insertAdjacentHTML('beforeend', markup);
